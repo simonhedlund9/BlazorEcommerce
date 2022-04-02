@@ -1,4 +1,5 @@
 using BlazorEcommerce.Server.Data;
+using BlazorEcommerce.Server.Services.CategoryService;
 using BlazorEcommerce.Server.Services.ProductService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,6 +33,7 @@ namespace BlazorEcommerce.Server
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<ICategoryService, CategoryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
