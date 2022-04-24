@@ -2,7 +2,7 @@
     max-height: 200pc;
     max-width: 200px;
     border-radius: 6px;
-    margin-bottom 10px;
+    margin-bottom: 10px;
     transition: transform .2s;
 
 }
@@ -14,6 +14,11 @@
 media-img-wrapper {
     width: 200px;
     text-align: center;
+}
+
+.page-selection {
+    margin-right: 15px;
+    margin-bottom: 30px;
 }
 
 
