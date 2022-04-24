@@ -30,7 +30,7 @@ namespace BlazorEcommerce.Client.Services.ProductService
         {
 
             var result = categoryUrl == null ? 
-                await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>("api/Product") :
+                await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>("api/Product/featured") :
                 await _http.GetFromJsonAsync<ServiceResponse<List<Product>>>($"api/Product/Category/{categoryUrl}");
             Products = result.Data;
             ProductsChanged.Invoke();
