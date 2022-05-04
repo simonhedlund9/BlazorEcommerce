@@ -60,6 +60,7 @@ namespace BlazorEcommerce.Server.Services.ProductService
             return response;
         }
 
+        //returns products based on their category
         public async Task<ServiceResponse<List<Product>>> GetProductsByCategory(string categoryUrl)
         {
             var response = new ServiceResponse<List<Product>>
@@ -74,6 +75,7 @@ namespace BlazorEcommerce.Server.Services.ProductService
             return response;
         }
 
+        //Takes in a searchString and looks for 
         public async Task<ServiceResponse<List<string>>> GetProductSearchSuggestions(string searchText)
         {
             var products = await FindProductsBySearchText(searchText);
@@ -104,6 +106,8 @@ namespace BlazorEcommerce.Server.Services.ProductService
             return new ServiceResponse<List<string>> { Data = result };
         }
 
+        //Takes in a search text and looks for matching titles and description from the datacontext then returns the products where it matches
+
         public async Task<ServiceResponse<ProductSearchResult>> SearchProducts(string searchText, int page)
         {
             var pageResults = 2f;
@@ -130,6 +134,8 @@ namespace BlazorEcommerce.Server.Services.ProductService
             return response;
         }
 
+
+        //Takes in a search text and looks for matching titles and description from the datacontext 
         private async Task<List<Product>> FindProductsBySearchText(string searchText)
         {
             return await _context.Products
